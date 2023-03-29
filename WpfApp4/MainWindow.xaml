@@ -1,0 +1,35 @@
+﻿<Window x:Class="WpfApp4.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp4"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid Background="#FF5E95A0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="171*"/>
+            <ColumnDefinition Width="629*"/>
+        </Grid.ColumnDefinitions>
+        <Button Click="Button_Click" Content="Добавить" HorizontalAlignment="Left" Margin="315,348,0,0" VerticalAlignment="Top" Height="60" Width="174" Grid.Column="1" RenderTransformOrigin="0.178,0.614" Background="#FFF5BDBD" FontFamily="Arial Black" FontSize="20"/>
+        <ListBox ItemsSource="{Binding ListBads}" SelectedItem="{Binding SelectedBad}" Margin="102,63,102,125" Grid.ColumnSpan="2" FontFamily="Arial Black" FontSize="18">
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+
+                    <StackPanel>
+                        <TextBlock Text="{Binding Path=Title}"/>
+                        <TextBlock Text="{Binding Path=Price}"/>
+
+                    </StackPanel>
+
+                </DataTemplate>
+
+
+            </ListBox.ItemTemplate>
+
+
+        </ListBox>
+        <Button Click="Button_Click_1" Content="Редактировать" HorizontalAlignment="Left" Margin="145,348,0,0" VerticalAlignment="Top" Height="60" Width="174" Grid.ColumnSpan="2" Background="#FFF5BDBD" FontFamily="Arial Black" FontSize="20"/>
+
+    </Grid>
+</Window>
